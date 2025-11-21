@@ -20,7 +20,8 @@ export default defineConfig({
         items: [
           { text: 'Introduction', link: '/guide/' },
           { text: 'Installation', link: '/guide/installation' },
-          { text: 'Configuration', link: '/guide/configuration' }
+          { text: 'Configuration', link: '/guide/configuration' },
+          { text: 'Universal Usage', link: '/guide/universal-usage' }
         ]
       }
     ]
