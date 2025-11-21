@@ -1,32 +1,32 @@
 # Universal Usage Guide
 
-Visua11y Agent sekarang mendukung **berbagai cara penggunaan** untuk fleksibilitas maksimal!
+Visua11y Agent now supports **multiple usage patterns** for maximum flexibility!
 
-## 🎯 Cara 1: Modern ES Module (Recommended)
+## 🎯 Method 1: Modern ES Module (Recommended)
 
 ```typescript
 import { createVisua11yAgent } from 'visua11y-agent';
 
 const plugin = createVisua11yAgent({
-  lang: 'id',
+  lang: 'en',
   position: 'bottom-right',
   size: 'medium'
 });
 
-// Gunakan API
+// Use the API
 plugin.setWidgetSize('small');
 plugin.openMenu();
 plugin.changeLanguage('en');
 ```
 
-## 🎯 Cara 2: Default Import
+## 🎯 Method 2: Default Import
 
 ```javascript
 import visua11yAgent from 'visua11y-agent';
 
 const plugin = visua11yAgent({
   options: {
-    lang: 'id',
+    lang: 'en',
     position: 'bottom-right'
   }
 });
@@ -34,23 +34,23 @@ const plugin = visua11yAgent({
 plugin.setPosition('top-left');
 ```
 
-## 🎯 Cara 3: CDN dengan window (Auto-init)
+## 🎯 Method 3: CDN with window (Auto-init)
 
 ```html
 <script
   src="https://cdn.jsdelivr.net/npm/visua11y-agent/dist/visua11y-agent.umd.js"
-  data-visua11y-agent-lang="id"
+  data-visua11y-agent-lang="en"
   data-visua11y-agent-position="bottom-right"
   defer
 ></script>
 
 <script>
-  // Otomatis tersedia di window
+  // Automatically available on window
   window.Visua11yAgentPlugin.setWidgetSize('small');
 </script>
 ```
 
-## 🎯 Cara 4: Vue 3 Composable
+## 🎯 Method 4: Vue 3 Composable
 
 ```javascript
 // composables/useVisua11y.js
@@ -74,13 +74,13 @@ export function useVisua11y(options = {}) {
 }
 ```
 
-**Penggunaan:**
+**Usage:**
 ```vue
 <script setup>
 import { useVisua11y } from '@/composables/useVisua11y';
 
 const { setSize, openMenu, changeLanguage } = useVisua11y({
-  lang: 'id',
+  lang: 'en',
   position: 'bottom-right'
 });
 </script>
@@ -92,7 +92,7 @@ const { setSize, openMenu, changeLanguage } = useVisua11y({
 </template>
 ```
 
-## 🎯 Cara 5: React Hook
+## 🎯 Method 5: React Hook
 
 ```javascript
 // hooks/useVisua11y.js
@@ -121,13 +121,13 @@ export function useVisua11y(options = {}) {
 }
 ```
 
-**Penggunaan:**
+**Usage:**
 ```jsx
 import { useVisua11y } from './hooks/useVisua11y';
 
 function App() {
   const { setSize, openMenu, changeLanguage } = useVisua11y({
-    lang: 'id',
+    lang: 'en',
     position: 'bottom-right'
   });
 
@@ -141,7 +141,7 @@ function App() {
 }
 ```
 
-## 🎯 Cara 6: Pinia Store (Vue)
+## 🎯 Method 6: Pinia Store (Vue)
 
 ```javascript
 // stores/accessibility.js
@@ -157,7 +157,7 @@ export const useAccessibilityStore = defineStore('accessibility', {
   actions: {
     init(options = {}) {
       this.plugin = createVisua11yAgent({
-        lang: 'id',
+        lang: 'en',
         position: 'bottom-right',
         ...options
       });
@@ -188,7 +188,7 @@ export const useAccessibilityStore = defineStore('accessibility', {
 });
 ```
 
-## 🎯 Cara 7: React Context
+## 🎯 Method 7: React Context
 
 ```jsx
 // contexts/AccessibilityContext.jsx
@@ -202,7 +202,7 @@ export function AccessibilityProvider({ children, options = {} }) {
 
   useEffect(() => {
     const instance = createVisua11yAgent({
-      lang: 'id',
+      lang: 'en',
       position: 'bottom-right',
       ...options
     });
@@ -234,14 +234,14 @@ export const useAccessibility = () => {
 };
 ```
 
-## ✨ Keuntungan Universal API
+## ✨ Universal API Benefits
 
-✅ **Fleksibel** - Pilih cara yang paling cocok untuk project Anda  
-✅ **Type-safe** - Full TypeScript support dengan autocomplete  
-✅ **Framework-agnostic** - Bekerja dengan Vue, React, Angular, Svelte, dll  
-✅ **Backward compatible** - Tidak break existing code  
-✅ **Tree-shakeable** - Bundler bisa optimize dengan baik  
-✅ **SSR-friendly** - Aman untuk server-side rendering  
-✅ **No globals required** - Tidak perlu `window` jika tidak mau  
+✅ **Flexible** - Choose the method that best fits your project  
+✅ **Type-safe** - Full TypeScript support with autocomplete  
+✅ **Framework-agnostic** - Works with Vue, React, Angular, Svelte, etc.  
+✅ **Backward compatible** - Doesn't break existing code  
+✅ **Tree-shakeable** - Bundlers can optimize efficiently  
+✅ **SSR-friendly** - Safe for server-side rendering  
+✅ **No globals required** - No need for `window` if you don't want it  
 
-Sekarang Visua11y Agent benar-benar **universal**! 🚀
+Visua11y Agent is now truly **universal**! 🚀
