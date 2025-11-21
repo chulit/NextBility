@@ -10,7 +10,6 @@ const targetArg = process.argv.find((arg) => arg.startsWith('--target='));
 const targetFormat = targetArg ? targetArg.split('=')[1] : 'umd';
 
 const baseConfig = {
-  entryPoints: ['./src/entry.ts'],
   bundle: true,
   minify: isMinify,
   sourcemap: true,
@@ -55,9 +54,14 @@ const baseConfig = {
 
 // Build targets
 const targets = {
-  esm: { format: 'esm', outfile: 'dist/visua11y-agent.esm.js' },
-  cjs: { format: 'cjs', outfile: 'dist/visua11y-agent.cjs.js' },
-  umd: { format: 'iife', outfile: 'dist/visua11y-agent.umd.js', globalName: 'Visua11yAgent' },
+  esm: { format: 'esm', outfile: 'dist/visua11y-agent.esm.js', entryPoints: ['./src/index.ts'] },
+  cjs: { format: 'cjs', outfile: 'dist/visua11y-agent.cjs.js', entryPoints: ['./src/index.ts'] },
+  umd: {
+    format: 'iife',
+    outfile: 'dist/visua11y-agent.umd.js',
+    entryPoints: ['./src/entry.ts'],
+    globalName: 'Visua11yAgent',
+  },
 };
 
 const buildTarget = targets[targetFormat];
