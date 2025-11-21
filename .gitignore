@@ -6,6 +6,9 @@ dist/
 /.env
 .DS_Store
 
+# Ignore VitePress cache
+docs/.vitepress/cache/
+
 # Ignore any temporary files
 *.log
 *.swp
