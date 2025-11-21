@@ -39,6 +39,8 @@ Control the widget through `data-visua11y-agent-*` attributes on the script tag 
 | `window.Visua11yAgentPlugin.toggleTool(key, enable)`   | Toggle a specific tool on or off.                 | `Visua11yAgentPlugin.toggleTool("high-contrast", true)`                                                                                       |
 | `window.Visua11yAgentPlugin.setProfile(profileId)`     | Set the active accessibility profile.             | `Visua11yAgentPlugin.setProfile("blind")`                                                                                                     |
 | `window.Visua11yAgentPlugin.getSettings()`             | Get the current user settings object.             | `console.log(Visua11yAgentPlugin.getSettings())`                                                                                              |
+| `window.Visua11yAgentPlugin.hideFooter(hide)`          | Hide or show the menu footer.                     | `Visua11yAgentPlugin.hideFooter(true)`                                                                                                        |
+| `window.Visua11yAgentPlugin.setFooterSize(size)`       | Set the menu footer size.                         | `Visua11yAgentPlugin.setFooterSize("small")`                                                                                                  |
 | `window.Visua11yAgentPlugin.resetAll()`                | Restore widget defaults and clear saved settings. | `Visua11yAgentPlugin.resetAll()`                                                                                                              |
 
 See `demo/index.html` for practical examples.

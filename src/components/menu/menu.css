@@ -1013,6 +1013,44 @@ html.aws-filter .visua11y-agent-container .visua11y-agent-profile-btn.visua11y-a
   color: #396afc !important;
 }
 
+.visua11y-agent-footer-hidden {
+  display: none !important;
+}
+
+.visua11y-agent-footer-small {
+  padding: 10px 15px !important;
+}
+
+.visua11y-agent-footer-small img {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.visua11y-agent-footer-small a {
+  font-size: 14px !important;
+}
+
+.visua11y-agent-footer-small small {
+  font-size: 11px !important;
+}
+
+.visua11y-agent-footer-large {
+  padding: 20px 25px !important;
+}
+
+.visua11y-agent-footer-large img {
+  width: 52px !important;
+  height: 52px !important;
+}
+
+.visua11y-agent-footer-large a {
+  font-size: 18px !important;
+}
+
+.visua11y-agent-footer-large small {
+  font-size: 14px !important;
+}
+
 .visua11y-agent-menu-content {
   flex: 1;
   overflow-y: scroll;

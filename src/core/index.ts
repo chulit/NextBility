@@ -132,6 +132,33 @@ export default function visua11yAgent({ options }) {
     return { ...userSettings };
   }
 
+  function hideFooter(hide: boolean) {
+    userSettings.footerHidden = hide;
+    saveUserSettings();
+    const footer = document.querySelector('.visua11y-agent-footer');
+    if (footer) {
+      if (hide) {
+        footer.classList.add('visua11y-agent-footer-hidden');
+      } else {
+        footer.classList.remove('visua11y-agent-footer-hidden');
+      }
+    }
+  }
+
+  function setFooterSize(size: 'small' | 'medium' | 'large') {
+    userSettings.footerSize = size;
+    saveUserSettings();
+    const footer = document.querySelector('.visua11y-agent-footer');
+    if (footer) {
+      footer.classList.remove('visua11y-agent-footer-small', 'visua11y-agent-footer-large');
+      if (size === 'small') {
+        footer.classList.add('visua11y-agent-footer-small');
+      } else if (size === 'large') {
+        footer.classList.add('visua11y-agent-footer-large');
+      }
+    }
+  }
+
   return {
     changeLanguage,
     setIcon,
@@ -143,6 +170,8 @@ export default function visua11yAgent({ options }) {
     toggleTool,
     setProfile,
     getSettings,
+    hideFooter,
+    setFooterSize,
     registerLanguage: registerCustomLanguage,
     resetAll: () => {
       reset();

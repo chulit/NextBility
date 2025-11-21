@@ -14,6 +14,8 @@ export interface ISettings {
   offset?: number[];
   widgetSize?: WidgetSizePreset | number;
   activeProfile?: string;
-  states?: ISettingsStates;
+  footerHidden?: boolean;
+  footerSize?: 'small' | 'medium' | 'large';
+  states: ISettingsStates;
   updatedAt?: Date;
 }

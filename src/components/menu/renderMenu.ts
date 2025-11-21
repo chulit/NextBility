@@ -1109,6 +1109,21 @@ export default function renderMenu() {
     });
   });
 
+  // Apply saved footer settings
+  const $footer = $container.querySelector<HTMLElement>('.visua11y-agent-footer');
+  if ($footer) {
+    if (userSettings.footerHidden) {
+      $footer.classList.add('visua11y-agent-footer-hidden');
+    }
+    if (userSettings.footerSize) {
+      if (userSettings.footerSize === 'small') {
+        $footer.classList.add('visua11y-agent-footer-small');
+      } else if (userSettings.footerSize === 'large') {
+        $footer.classList.add('visua11y-agent-footer-large');
+      }
+    }
+  }
+
   $widget.appendChild($container);
 
   return $container;
