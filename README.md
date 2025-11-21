@@ -95,6 +95,38 @@ Stick to pinned versions for stability (`@1.2.0`) and switch to `@latest` if you
 ></script>
 ```
 
+## Universal Usage
+
+Visua11y Agent supports **multiple usage patterns** for maximum flexibility:
+
+### Modern ES Module (Recommended)
+
+```js
+import { createVisua11yAgent } from 'visua11y-agent';
+
+const plugin = createVisua11yAgent({
+  lang: 'en',
+  position: 'bottom-right',
+  size: 'medium'
+});
+
+// Use the API
+plugin.setWidgetSize('small');
+plugin.openMenu();
+```
+
+### Vue 3 / React
+
+```js
+// Vue Composable or React Hook
+import { createVisua11yAgent } from 'visua11y-agent';
+
+const plugin = createVisua11yAgent({ lang: 'id' });
+plugin.setWidgetSize('small');
+```
+
+See [Universal Usage Guide](./docs/guide/universal-usage.md) for complete examples including Vue composables, React hooks, Pinia stores, and React Context patterns.
+
 ## Configuration
 
 Control the widget through `data-visua11y-agent-*` attributes on the script tag or by calling helpers on `window.Visua11yAgentPlugin` after it loads.
@@ -183,7 +215,48 @@ Semua item dalam roadmap awal (termasuk Accessibility Profiles) telah dirilis. A
 
 ## Contributing
 
-Improvements are welcome! Fork the repository and open a pull request with your changes. ❤️
+We welcome contributions from the community! Whether you're fixing bugs, adding features, improving documentation, or translating to new languages, your help is appreciated. ❤️
+
+### How to Contribute
+
+1. **Fork the repository** and create your feature branch
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+
+2. **Make your changes** following our code style
+   - Write clear, descriptive commit messages
+   - Add tests for new features
+   - Update documentation as needed
+
+3. **Test your changes**
+   ```bash
+   npm test
+   npm run build
+   npm run demo
+   ```
+
+4. **Submit a pull request** with a clear description of your changes
+
+### Ways to Contribute
+
+- 🐛 **Report bugs** - Open an issue with reproduction steps
+- ✨ **Suggest features** - Share your ideas for improvements
+- 🌍 **Add translations** - Help make Visua11y accessible in more languages
+- 📝 **Improve docs** - Fix typos, add examples, clarify explanations
+- 🧪 **Write tests** - Increase code coverage and reliability
+- 💻 **Submit code** - Fix bugs or implement new features
+
+### Development Setup
+
+```bash
+git clone https://github.com/chulit/visua11y-agent.git
+cd visua11y-agent
+npm install
+npm run demo:serve  # Start development server with hot reload
+```
+
+For questions or discussions, feel free to open an issue or reach out to the maintainers.
 
 ## License
 

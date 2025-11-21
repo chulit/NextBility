@@ -13,6 +13,18 @@
     "README.md",
     "LICENSE"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/visua11y-agent.esm.js",
+      "require": "./dist/visua11y-agent.cjs.js",
+      "types": "./types/index.d.ts"
+    },
+    "./core": {
+      "import": "./dist/visua11y-agent.esm.js",
+      "require": "./dist/visua11y-agent.cjs.js"
+    },
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "watch": "node esbuild.config.js --watch",
     "build": "node esbuild.config.js --minify",
