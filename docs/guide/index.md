@@ -13,7 +13,7 @@ Visua11y Agent adds a customizable accessibility toolbar to your site so visitor
 -   **Motion & Cursor Utilities** – Stop animations, disable animated images, enlarge cursor for low-vision users.
 -   **Widget Settings** – Position controls allowing placement in 8 different locations (top-left, top-center, top-right, center-left, center-right, bottom-left, bottom-center, bottom-right).
 -   **Reset Functionality** – One-click reset to restore all accessibility settings to default values.
--   **Developer Hooks** – Expose helpers like `plugin.setIcon`, `plugin.changeLanguage`, `plugin.registerLanguage`, and `plugin.resetAll` for deeper UI personalization.
+-   **Developer Hooks** – Expose helpers like `plugin.setIcon`, `plugin.changeLanguage`, `plugin.registerLanguage`, `plugin.setWidgetSize`, `plugin.setPosition`, `plugin.setOffset`, `plugin.openMenu`, `plugin.closeMenu`, `plugin.toggleTool`, `plugin.setProfile`, `plugin.getSettings`, and `plugin.resetAll` for deeper UI personalization.
 
 ## Menu Structure
 

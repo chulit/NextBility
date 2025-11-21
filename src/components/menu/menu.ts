@@ -13,3 +13,9 @@ export function openMenu() {
 
   translateWidget();
 }
+
+export function closeMenu() {
+  if ($menu) {
+    toggleMenu(false);
+  }
+}
