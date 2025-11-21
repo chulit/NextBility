@@ -16,9 +16,12 @@ export default function visua11yAgent({ options }) {
   const savedSettings = getSavedUserSettings() || {};
 
   const providedOptions = options || {};
-  const { size: incomingSize, ...restOptions } = providedOptions;
+  const { size: incomingSize, buttonSize, ...restOptions } = providedOptions;
 
   Object.assign(pluginConfig, restOptions);
+  if (typeof buttonSize === 'number') {
+    pluginConfig.buttonSize = buttonSize;
+  }
 
   const resolvedOptionSize = resolveWidgetSize(
     incomingSize ?? pluginConfig.sizePreset ?? pluginConfig.size
@@ -31,6 +34,7 @@ export default function visua11yAgent({ options }) {
   pluginDefaults.position = pluginConfig.position;
   pluginDefaults.offset = Array.isArray(pluginConfig.offset) ? [...pluginConfig.offset] : [20, 20];
   pluginDefaults.size = pluginConfig.size;
+  pluginDefaults.buttonSize = pluginConfig.buttonSize;
   pluginDefaults.sizePreset = pluginConfig.sizePreset;
   pluginDefaults.panelWidth = pluginConfig.panelWidth;
   pluginDefaults.icon = pluginConfig.icon;
@@ -83,6 +87,15 @@ export default function visua11yAgent({ options }) {
 
     userSettings.widgetSize = resolved.preset ?? resolved.size;
     saveUserSettings();
+    applyButtonPosition();
+  }
+
+  function setButtonSize(size: number) {
+    if (typeof size !== 'number' || Number.isNaN(size) || size <= 0) {
+      console.warn('[Visua11y Agent] setButtonSize expects a positive number (px).');
+      return;
+    }
+    pluginConfig.buttonSize = size;
     applyButtonPosition();
   }
 
@@ -163,6 +176,7 @@ export default function visua11yAgent({ options }) {
     changeLanguage,
     setIcon,
     setWidgetSize,
+    setButtonSize,
     setPosition,
     setOffset,
     openMenu,

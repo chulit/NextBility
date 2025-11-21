@@ -107,11 +107,15 @@ import { createVisua11yAgent } from 'visua11y-agent';
 const plugin = createVisua11yAgent({
   lang: 'en',
   position: 'bottom-right',
-  size: 'medium'
+  size: 'medium',        // overall widget (button + panel)
+  buttonSize: 52,        // override trigger button size only (px)
+  iconSize: 28           // override icon size only (px)
 });
 
 // Use the API
 plugin.setWidgetSize('small');
+plugin.setButtonSize(48);
+plugin.setIconSize(26);
 plugin.openMenu();
 ```
 
@@ -138,7 +142,7 @@ Control the widget through `data-visua11y-agent-*` attributes on the script tag 
 | `data-visua11y-agent-lang`     | Set the default UI language.                       | `data-visua11y-agent-lang="en"`               |
 | `data-visua11y-agent-position` | Choose where the launcher appears.                 | `data-visua11y-agent-position="bottom-right"` |
 | `data-visua11y-agent-offset`   | Adjust launcher offset (`x,y`).                    | `data-visua11y-agent-offset="24,24"`          |
-| `data-visua11y-agent-size`     | Switch button size (`default`, `medium`, `small`). | `data-visua11y-agent-size="medium"`           |
+| `data-visua11y-agent-size`     | Switch overall widget size (`default`, `medium`, `small`). | `data-visua11y-agent-size="medium"`   |
 | `data-visua11y-agent-icon`     | Provide custom HTML for the launcher icon.         | `data-visua11y-agent-icon="<span>♿️</span>"`  |
 
 ### Preset Profiles

@@ -22,7 +22,10 @@ export function applyButtonPosition() {
     $widgetButton.style.right = 'auto';
     Object.assign($widgetButton.style, getButtonStyle());
 
-    const size = Number(pluginConfig.size) || DEFAULT_BUTTON_SIZE;
+    const size =
+      typeof pluginConfig.buttonSize === 'number' && pluginConfig.buttonSize > 0
+        ? pluginConfig.buttonSize
+        : Number(pluginConfig.size) || DEFAULT_BUTTON_SIZE;
     const iconSize = Math.max(Math.round(size * 0.62), 20);
     $widgetButton.style.setProperty('--visua11y-agent-button-size', `${size}px`);
     $widgetButton.style.setProperty('--visua11y-agent-icon-size', `${iconSize}px`);

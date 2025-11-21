@@ -10,13 +10,24 @@ import { createVisua11yAgent } from 'visua11y-agent';
 const plugin = createVisua11yAgent({
   lang: 'en',
   position: 'bottom-right',
-  size: 'medium'
+  size: 'medium',        // overall widget (button + panel)
+  buttonSize: 52,        // override trigger button only (px)
+  iconSize: 28           // override icon only (px)
 });
 
 // Use the API
 plugin.setWidgetSize('small');
+plugin.setButtonSize(48);
+plugin.setIconSize(26);
 plugin.openMenu();
 plugin.changeLanguage('en');
+
+### Key Options
+
+- `size`: overall widget preset (`default`, `small`, `medium`, `large`) or numeric px.
+- `buttonSize`: override trigger button size only (px).
+- `iconSize`: override trigger icon size only (px).
+- `icon`: HTML string or selector (e.g., `#my-icon-template`) for custom icon.
 ```
 
 ## 🎯 Method 2: Default Import
