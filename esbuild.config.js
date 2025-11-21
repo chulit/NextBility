@@ -47,7 +47,7 @@ const baseConfig = {
  * (c) ${new Date().getFullYear()} ${packageJson.author}
  * License: ${packageJson.license}
  * Home Page: ${packageJson.homepage}
- * Repository : ${packageJson.repository.url}
+ * Repository: ${packageJson.repository.url}
  */`,
   },
 };
