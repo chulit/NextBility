@@ -13,13 +13,15 @@
     "README.md",
     "LICENSE"
   ],
+  "types": "./types/index.d.ts",
   "exports": {
     ".": {
+      "types": "./types/index.d.ts",
       "import": "./dist/visua11y-agent.esm.js",
-      "require": "./dist/visua11y-agent.cjs.js",
-      "types": "./types/index.d.ts"
+      "require": "./dist/visua11y-agent.cjs.js"
     },
     "./core": {
+      "types": "./types/index.d.ts",
       "import": "./dist/visua11y-agent.esm.js",
       "require": "./dist/visua11y-agent.cjs.js"
     },

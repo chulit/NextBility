@@ -56,7 +56,7 @@ export interface Visua11yAgentPlugin {
 
 export declare function createVisua11yAgent(options?: Visua11yAgentOptions): Visua11yAgentPlugin;
 export declare function initVisua11yAgent(options: { options: Visua11yAgentOptions }): Visua11yAgentPlugin;
-export declare function visua11yAgent(options: { options?: Visua11yAgentOptions }): Visua11yAgentPlugin;
+export declare function visua11yAgent(options: { options?: Visua11yAgentOptions } | Visua11yAgentOptions): Visua11yAgentPlugin;
 
 declare const _default: typeof visua11yAgent;
 export default _default;
