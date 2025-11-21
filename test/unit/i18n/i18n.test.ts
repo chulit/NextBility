@@ -406,22 +406,22 @@ describe('internationalization features', () => {
       // which would be called with the language selector ID
     });
 
-    it('should call translateWidget after changing language', () => {
-      changeLanguage('de');
+    it('should call translateWidget after changing language', async () => {
+      await changeLanguage('de');
       
       expect(translateWidget).toHaveBeenCalled();
     });
 
-    it('should save user settings after changing language', () => {
-      changeLanguage('it');
+    it('should save user settings after changing language', async () => {
+      await changeLanguage('it');
       
       expect(saveUserSettings).toHaveBeenCalled();
     });
 
-    it('should dispatch a custom event when language changes', () => {
+    it('should dispatch a custom event when language changes', async () => {
       const dispatchEventSpy = vi.spyOn(document, 'dispatchEvent');
       
-      changeLanguage('pt');
+      await changeLanguage('pt');
       
       expect(dispatchEventSpy).toHaveBeenCalledWith(
         expect.objectContaining({

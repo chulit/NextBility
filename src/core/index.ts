@@ -9,7 +9,7 @@ import { userSettings, getSavedUserSettings, saveUserSettings } from '@/config/u
 
 import { pluginConfig, pluginDefaults } from '@/config/pluginConfig';
 import { changeLanguage } from '@/i18n/changeLanguage';
-import { IRegisterLanguageOptions, registerLanguage, resolveLanguageCode } from '@/i18n/Languages';
+import { IRegisterLanguageOptions, registerLanguage, resolveLanguageCode, loadLanguages } from '@/i18n/Languages';
 import { resolveWidgetSize } from '@/config/widgetSize';
 
 export default function visua11yAgent({ options }) {
@@ -64,6 +64,9 @@ export default function visua11yAgent({ options }) {
 
   runAccessibility();
   renderWidget();
+  loadLanguages().then(() => {
+    translateWidget();
+  });
 
   function setIcon(icon?: string) {
     pluginConfig.icon = icon;

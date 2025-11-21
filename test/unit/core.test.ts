@@ -43,6 +43,7 @@ vi.mock('@/i18n/changeLanguage', () => ({
 vi.mock('@/i18n/Languages', () => ({
   registerLanguage: vi.fn(),
   resolveLanguageCode: vi.fn((lang) => lang), // Return the input language by default
+  loadLanguages: vi.fn(() => Promise.resolve()),
 }));
 
 // We can now import and use the shared objects

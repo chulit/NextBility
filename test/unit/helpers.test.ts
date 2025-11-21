@@ -60,6 +60,7 @@ vi.mock('@/i18n/changeLanguage', () => ({
 vi.mock('@/i18n/Languages', () => ({
   registerLanguage: vi.fn(),
   resolveLanguageCode: vi.fn((lang) => lang),
+  loadLanguages: vi.fn(() => Promise.resolve()),
 }));
 
 vi.mock('@/components/menu/renderTools', () => ({

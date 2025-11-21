@@ -36,7 +36,7 @@ export interface Visua11yAgentOptions {
 }
 
 export interface Visua11yAgentPlugin {
-  changeLanguage: (code: string) => void;
+  changeLanguage: (code: string) => Promise<void>;
   setIcon: (html?: string) => void;
   setWidgetSize: (size: string | number) => void;
   setButtonSize: (size: number) => void;

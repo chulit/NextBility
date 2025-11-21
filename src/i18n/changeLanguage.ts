@@ -1,9 +1,9 @@
 import { saveUserSettings, userSettings } from '@/config/userSettings';
-import { LANGUAGES, resolveLanguageCode } from './Languages';
+import { LANGUAGES, resolveLanguageCode, loadLanguages } from './Languages';
 import translateWidget from '@/components/menu/translateWidget';
 import { $menu } from '@/components/menu/menu';
 
-export function changeLanguage(newLang) {
+export async function changeLanguage(newLang) {
   const resolvedCode = resolveLanguageCode(newLang);
 
   if (!LANGUAGES.some((language) => language.code === resolvedCode)) {
@@ -18,6 +18,8 @@ export function changeLanguage(newLang) {
       $lang.value = resolvedCode;
     }
 
+    // Ensure dictionaries are loaded before re-rendering labels
+    await loadLanguages();
     translateWidget();
     saveUserSettings();
   }

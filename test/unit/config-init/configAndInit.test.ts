@@ -30,7 +30,7 @@ vi.mock('../../../src/utils/observeHTMLLang', () => ({
 }));
 
 vi.mock('../../../src/i18n/Languages', () => ({
-  loadLanguages: vi.fn(),
+  loadLanguages: vi.fn(() => Promise.resolve()),
 }));
 
 describe('configuration and initialization', () => {
