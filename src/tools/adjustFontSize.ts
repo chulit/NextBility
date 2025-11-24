@@ -1,7 +1,8 @@
 import { ICON_SELECTOR } from '@/enum/Selectors';
 
+// Include common text containers so real-world layouts (div/button-heavy) are resized too.
 const FONT_SIZE_SELECTOR =
-  'h1,h2,h3,h4,h5,h6,p,a,dl,dt,li,ol,th,td,span,blockquote,.visua11y-agent-text';
+  'h1,h2,h3,h4,h5,h6,p,a,dl,dt,li,ol,th,td,span,blockquote,div,button,.visua11y-agent-text';
 const ICON_SELECTOR_SET = new Set(ICON_SELECTOR);
 
 export default function adjustFontSize(multiply: number = 1) {
