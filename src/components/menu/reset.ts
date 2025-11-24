@@ -57,6 +57,13 @@ export default function reset() {
     btn.classList.remove('visua11y-agent-selected');
     btn.setAttribute('aria-pressed', 'false');
   });
+  const $fontSizeAmount = document.querySelector<HTMLElement>('.visua11y-agent-amount');
+  if ($fontSizeAmount) {
+    $fontSizeAmount.textContent = '100%';
+  }
+  document
+    .querySelectorAll<HTMLElement>('[data-key="font-size"]')
+    .forEach((btn) => btn.setAttribute('aria-pressed', 'false'));
 
   const $positionToggle = document.querySelector<HTMLButtonElement>(
     '.visua11y-agent-position-toggle'

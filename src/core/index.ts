@@ -53,6 +53,9 @@ export default function visua11yAgent({ options }) {
   const initialLanguage = resolveLanguageCode(userSettings.lang || pluginConfig.lang);
   userSettings.lang = initialLanguage;
   pluginConfig.lang = initialLanguage;
+  if (typeof document !== 'undefined' && document.documentElement) {
+    document.documentElement.lang = initialLanguage;
+  }
 
   if (userSettings.position) {
     pluginConfig.position = userSettings.position;

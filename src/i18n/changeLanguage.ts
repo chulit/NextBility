@@ -18,6 +18,10 @@ export async function changeLanguage(newLang) {
       $lang.value = resolvedCode;
     }
 
+    if (typeof document !== 'undefined' && document.documentElement) {
+      document.documentElement.lang = resolvedCode;
+    }
+
     // Ensure dictionaries are loaded before re-rendering labels
     await loadLanguages();
     translateWidget();
